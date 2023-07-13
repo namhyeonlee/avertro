@@ -1,4 +1,9 @@
 @import "styles/variable.scss";
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
 
 .app {
   width: 100%;
@@ -51,6 +56,9 @@
           border-top-left-radius: 10px;
           border-top-right-radius: 10px;
           cursor: pointer;
+          @include mobile {
+            font-size: $small-font;
+          }
         }
         .activeTab {
           background-color: $whiteColor;
@@ -67,10 +75,14 @@
         .card {
           border: solid 1px $borderColor;
           border-radius: 10px;
+          margin-bottom: 15px;
           .cardWrap {
             display: flex;
             justify-content: space-between;
             padding: 20px;
+            @include mobile {
+              display: block;
+            }
 
             .cardLeft {
               width: 48%;
@@ -98,7 +110,7 @@
                 }
               }
               input[type="text"] {
-                width: 90%;
+                width: 96%;
                 font-size: $small-font;
                 border: solid 1px $inputBorderColor;
                 border-radius: 5px;
@@ -106,8 +118,17 @@
                 padding: 10px;
               }
               .inputWrap {
-                display: flex;
-                align-items: center;
+                // display: flex;
+                // align-items: center;
+                margin-bottom: 5px;
+                position: relative;
+                .removeIcon {
+                  display: block;
+                  position: absolute;
+                  right: -30px;
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
               }
             }
             .cardRight {
