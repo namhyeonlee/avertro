@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
@@ -6,7 +5,7 @@ const Layout = () => {
   return (
     <div>
       <div className="head">
-        <img src="/images/Logo.png" />
+        <img src={process.env.PUBLIC_URL + "/images/Logo.png"} />
       </div>
       <div>
         <Outlet />

@@ -26,7 +26,7 @@
     height: 100%;
     margin-left: 76px;
     margin-right: 76px;
-    margin-top: 76px;
+    margin-top: 30px;
 
     .titleWrap {
       border-bottom: solid 1px $borderColor;
@@ -86,6 +86,9 @@
 
             .cardLeft {
               width: 48%;
+              @include mobile {
+                width: 96%;
+              }
               .cardContent {
                 margin-bottom: 15px;
               }
@@ -93,6 +96,9 @@
                 color: $MainColor;
                 font-size: $large-font;
                 font-weight: 700;
+                @include mobile {
+                  font-size: $small-font;
+                }
               }
               .titleBox {
                 width: 100%;
@@ -118,8 +124,6 @@
                 padding: 10px;
               }
               .inputWrap {
-                // display: flex;
-                // align-items: center;
                 margin-bottom: 5px;
                 position: relative;
                 .removeIcon {
@@ -136,11 +140,18 @@
               display: flex;
               justify-content: space-between;
 
+              @include mobile {
+                width: 100%;
+              }
+
               .title {
                 color: $MainColor;
                 font-size: $large-font;
                 font-weight: 700;
                 margin-bottom: 15px;
+                @include mobile {
+                  font-size: $small-font;
+                }
               }
               .startDate {
                 width: 49%;

@@ -3,9 +3,6 @@ import { toast } from "react-toastify";
 export const doGetByteLength = (str: string): number => {
   let byteLength = 0;
   for (let i = 0; i < str.length; i++) {
-    if (escape(str.charAt(i)).length > 4) {
-      byteLength++;
-    }
     byteLength++;
   }
   return byteLength;

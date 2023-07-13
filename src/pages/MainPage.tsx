@@ -1,10 +1,10 @@
 import { useState } from "react";
 import TabList from "components/common/TabList";
 import DatePickerInput from "components/common/DatePickerInput";
+import { doGetByteLength, toastCall } from "utils/commonFunction";
 import { Button } from "@mui/material";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
-import { doGetByteLength, toastCall } from "utils/commonFunction";
 
 interface IObjective {
   id: number;
@@ -70,6 +70,7 @@ const MainPage = () => {
   const doUpdateObjective = (obj: IObjective) => {
     if (!doVaildation(obj)) return;
 
+    toastCall("Update successful", "success");
     localStorage.setItem(`obj${obj.id}`, JSON.stringify(obj));
   };
 

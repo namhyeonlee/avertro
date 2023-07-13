@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 
 interface ITab {
   titles: string[];
-  children: any;
+  children: ReactNode[];
 }
 
 const TabList = ({ titles, children }: ITab) => {
