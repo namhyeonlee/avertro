@@ -1,0 +1,79 @@
+@import "styles/variable.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  //font-family: $font;
+  vertical-align: baseline;
+}
+
+html,
+body {
+  font-family: "Nanum Myeongjo", serif;
+  //font-family: "Square Peg", cursive;
+  font-size: 1.6rem;
+  color: $subColor;
+  background: $backgroundColor;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  position: relative;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+legend {
+  display: none;
+}
+em,
+address {
+  font-style: normal;
+  font-weight: normal;
+}
+button {
+  cursor: pointer;
+  border: 0;
+}
+img {
+  vertical-align: top;
+  border: 0;
+}
+a {
+  color: #111;
+  text-decoration: none;
+}
+a:active,
+a:focus,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+a:hover,
+a:active:hover,
+a:focus:hover,
+a:link:hover,
+a:visited:hover {
+  text-decoration: none;
+}
