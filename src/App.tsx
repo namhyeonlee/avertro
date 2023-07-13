@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "styles/global.scss";
 import "styles/pageStyle.scss";
+import "react-toastify/dist/ReactToastify.css";
 import Layout from "components/layout/Layout";
 import MainPage from "pages/MainPage";
 

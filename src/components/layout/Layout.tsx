@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 const Layout = () => {
   return (
@@ -10,6 +11,7 @@ const Layout = () => {
       <div>
         <Outlet />
       </div>
+      <ToastContainer position="top-right" autoClose={1500} limit={10} style={{ zIndex: "20000" }} />
     </div>
   );
 };
