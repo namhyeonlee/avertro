@@ -29,6 +29,160 @@
       .title {
         color: $MainColor;
         font-size: $medium-font;
+        font-weight: 400;
+      }
+    }
+
+    .contents {
+      margin-top: 15px;
+
+      .lstTab {
+        display: flex;
+
+        div {
+          height: 73px;
+          padding: 0 15px 0 15px;
+          text-align: center;
+          line-height: 73px;
+          background-color: $borderColor;
+          font-size: $large-font;
+          font-weight: 700;
+          color: $MainColor;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          cursor: pointer;
+        }
+        .activeTab {
+          background-color: $whiteColor;
+        }
+      }
+
+      .contentWrap {
+        background-color: $whiteColor;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        border-bottom-left-radius: 10px;
+        padding: 20px;
+
+        .card {
+          border: solid 1px $borderColor;
+          border-radius: 10px;
+          .cardWrap {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+
+            .cardLeft {
+              width: 48%;
+              .cardContent {
+                margin-bottom: 15px;
+              }
+              .title {
+                color: $MainColor;
+                font-size: $large-font;
+                font-weight: 700;
+              }
+              .titleBox {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .subTitleWrap {
+                  display: flex;
+                  align-items: center;
+                  .subTitle {
+                    color: $MainColor;
+                    font-size: $small-font;
+                  }
+                }
+              }
+              input[type="text"] {
+                width: 90%;
+                font-size: $small-font;
+                border: solid 1px $inputBorderColor;
+                border-radius: 5px;
+                outline: none;
+                padding: 10px;
+              }
+              .inputWrap {
+                display: flex;
+                align-items: center;
+              }
+            }
+            .cardRight {
+              width: 48%;
+              display: flex;
+              justify-content: space-between;
+
+              .title {
+                color: $MainColor;
+                font-size: $large-font;
+                font-weight: 700;
+                margin-bottom: 15px;
+              }
+              .startDate {
+                width: 49%;
+              }
+              .endDate {
+                width: 49%;
+              }
+              .datePicker {
+                width: 100%;
+                .MuiFormControl-root {
+                  width: 100% !important;
+                }
+                .MuiInputBase-root {
+                  width: 100% !important;
+                  height: 33px !important;
+                  font-size: $small-font;
+                }
+                .MuiSvgIcon-root {
+                  height: 20px !important;
+                  color: $MainColor;
+                }
+              }
+            }
+          }
+          .btnWrap {
+            padding: 20px;
+            display: flex;
+            justify-content: right;
+
+            .delBtn {
+              border-color: $redColor;
+              color: $redColor;
+              font-size: $small-font;
+              margin-right: 10px;
+              width: 86px;
+              height: 43px;
+              padding: 11px, 21px, 11px, 21px;
+            }
+            .updateBtn {
+              background-color: $MainColor;
+              color: $whiteColor;
+              font-size: $small-font;
+              margin-right: 10px;
+              width: 86px;
+              height: 43px;
+              padding: 11px, 21px, 11px, 21px;
+            }
+          }
+        }
+      }
+      .addBtnWrap {
+        display: flex;
+        justify-content: right;
+        margin-top: 15px;
+        .addBtn {
+          background-color: $MainColor;
+          color: $whiteColor;
+          font-size: $small-font;
+          margin-right: 10px;
+          width: 165px;
+          height: 43px;
+          padding: 11px, 21px, 11px, 21px;
+        }
       }
     }
   }
