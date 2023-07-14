@@ -39,35 +39,6 @@ const ERROR_MSG = "Invalid Date";
 const MainPage = () => {
   const [lstObjective, setLstObjective] = useState<IObjective[]>([initObjective]);
 
-  const doAddObjective = () => {
-    if (lstObjective.length === MAX_OBJECTIVE) {
-      toastCall("You can add up to three maximum.", "warning");
-    } else {
-      setLstObjective([...lstObjective, { ...initObjective, id: lstObjective.length + 1 }]);
-    }
-  };
-
-  const doAddKeyMeasures = (id: number, length: number) => {
-    if (length === MAX_OBJECTIVE) {
-      toastCall("You can add up to three maximum.", "warning");
-    } else {
-      setLstObjective(
-        lstObjective.map((obj) =>
-          obj.id === id
-            ? {
-                ...obj,
-                keyMeasures: [...obj.keyMeasures, { ...initKeyMeasure, id: length + 1 }],
-              }
-            : obj
-        )
-      );
-    }
-  };
-
-  const onChangeValue = (id: number, key: string, value: string) => {
-    setLstObjective(lstObjective.map((obj) => (obj.id === id ? { ...obj, [key]: value } : obj)));
-  };
-
   const doUpdateObjective = (obj: IObjective) => {
     if (!doVaildation(obj)) return;
 
@@ -101,6 +72,23 @@ const MainPage = () => {
     return true;
   };
 
+  const doAddKeyMeasures = (id: number, length: number) => {
+    setLstObjective(
+      lstObjective.map((obj) =>
+        obj.id === id
+          ? {
+              ...obj,
+              keyMeasures: [...obj.keyMeasures, { ...initKeyMeasure, id: length + 1 }],
+            }
+          : obj
+      )
+    );
+  };
+
+  const onChangeValue = (id: number, key: string, value: string) => {
+    setLstObjective(lstObjective.map((obj) => (obj.id === id ? { ...obj, [key]: value } : obj)));
+  };
+
   return (
     <div className="container">
       <div className="titleWrap">
@@ -123,9 +111,11 @@ const MainPage = () => {
                         <p className="title">Key Measures</p>
                         <div className="subTitleWrap">
                           <p className="subTitle">Add additional key measure</p>
-                          <a onClick={() => doAddKeyMeasures(rowData.id, rowData.keyMeasures.length)}>
-                            <AddCircleIcon style={{ color: "#25397d", fontSize: "18px", cursor: "pointer", marginLeft: "5px" }} />
-                          </a>
+                          {rowData.keyMeasures.length < MAX_OBJECTIVE && (
+                            <a onClick={() => doAddKeyMeasures(rowData.id, rowData.keyMeasures.length)}>
+                              <AddCircleIcon style={{ color: "#25397d", fontSize: "18px", cursor: "pointer", marginLeft: "5px" }} />
+                            </a>
+                          )}
                         </div>
                       </div>
                       {rowData.keyMeasures.map((keyMeasure, i) => (
@@ -197,13 +187,14 @@ const MainPage = () => {
                 </div>
               </div>
             ))}
-
-            <div className="addBtnWrap">
-              <Button className="addBtn" onClick={() => doAddObjective()}>
-                <AddCircleIcon style={{ color: "#fff", fontSize: "18px", cursor: "pointer", marginRight: "5px" }} />
-                Add Objective
-              </Button>
-            </div>
+            {lstObjective.length < MAX_OBJECTIVE && (
+              <div className="addBtnWrap">
+                <Button className="addBtn" onClick={() => setLstObjective([...lstObjective, { ...initObjective, id: lstObjective.length + 1 }])}>
+                  <AddCircleIcon style={{ color: "#fff", fontSize: "18px", cursor: "pointer", marginRight: "5px" }} />
+                  Add Objective
+                </Button>
+              </div>
+            )}
           </div>
         </TabList>
       </div>
