@@ -1,0 +1,25 @@
+@import "styles/variable.scss";
+
+.datePicker {
+  width: 100%;
+  .MuiFormControl-root {
+    width: 100% !important;
+  }
+  .MuiInputBase-root {
+    width: 100% !important;
+    height: 33px !important;
+    font-size: $small-font;
+    flex-direction: row-reverse !important;
+  }
+  .MuiInputBase-input {
+    padding: 0 !important;
+  }
+  .MuiButtonBase-root {
+    padding: 0 8px 0 0 !important;
+  }
+  .MuiSvgIcon-root {
+    height: 20px !important;
+    color: $MainColor;
+    padding: 0 !important;
+  }
+}

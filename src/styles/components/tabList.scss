@@ -1,0 +1,30 @@
+@import "styles/variable.scss";
+@mixin mobile {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+.lstTab {
+  display: flex;
+
+  div {
+    height: 73px;
+    padding: 0 15px 0 15px;
+    text-align: center;
+    line-height: 73px;
+    background-color: $borderColor;
+    font-size: $large-font;
+    font-weight: 700;
+    color: $MainColor;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    cursor: pointer;
+    @include mobile {
+      font-size: $small-font;
+    }
+  }
+  .activeTab {
+    background-color: $whiteColor;
+  }
+}

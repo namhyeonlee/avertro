@@ -1,10 +1,11 @@
 import { useState } from "react";
 import TabList from "components/common/TabList";
 import DatePickerInput from "components/common/DatePickerInput";
-import { doGetByteLength, toastCall } from "utils/commonFunction";
+import { toastCall } from "utils/commonFunction";
 import { Button } from "@mui/material";
 import AddCircleIcon from "@material-ui/icons/AddCircle";
 import RemoveCircleIcon from "@material-ui/icons/RemoveCircle";
+import { Buffer } from "buffer";
 
 interface IObjective {
   id: number;
@@ -75,12 +76,12 @@ const MainPage = () => {
   };
 
   const doVaildation = (obj: IObjective) => {
-    if (doGetByteLength(obj.objective) > 20) {
+    if (Buffer.byteLength(obj.objective) > 20) {
       toastCall("You cannot exceed 20 characters.", "error");
       return false;
     }
     for (let i = 0; i < obj.keyMeasures.length; i++) {
-      if (doGetByteLength(obj.keyMeasures[i].value) > 20) {
+      if (Buffer.byteLength(obj.keyMeasures[i].value) > 20) {
         toastCall("You cannot exceed 20 characters.", "error");
         return false;
       }
@@ -122,7 +123,6 @@ const MainPage = () => {
                         <p className="title">Key Measures</p>
                         <div className="subTitleWrap">
                           <p className="subTitle">Add additional key measure</p>
-
                           <a onClick={() => doAddKeyMeasures(rowData.id, rowData.keyMeasures.length)}>
                             <AddCircleIcon style={{ color: "#25397d", fontSize: "18px", cursor: "pointer", marginLeft: "5px" }} />
                           </a>

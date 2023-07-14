@@ -26,11 +26,10 @@
     height: 100%;
     margin-left: 76px;
     margin-right: 76px;
-    margin-top: 30px;
 
     .titleWrap {
       border-bottom: solid 1px $borderColor;
-      padding: 10px;
+      padding: 20px 0 20px 0;
       .title {
         color: $MainColor;
         font-size: $medium-font;
@@ -40,30 +39,6 @@
 
     .contents {
       margin-top: 15px;
-
-      .lstTab {
-        display: flex;
-
-        div {
-          height: 73px;
-          padding: 0 15px 0 15px;
-          text-align: center;
-          line-height: 73px;
-          background-color: $borderColor;
-          font-size: $large-font;
-          font-weight: 700;
-          color: $MainColor;
-          border-top-left-radius: 10px;
-          border-top-right-radius: 10px;
-          cursor: pointer;
-          @include mobile {
-            font-size: $small-font;
-          }
-        }
-        .activeTab {
-          background-color: $whiteColor;
-        }
-      }
 
       .contentWrap {
         background-color: $whiteColor;
@@ -112,6 +87,11 @@
                   .subTitle {
                     color: $MainColor;
                     font-size: $small-font;
+                    font-weight: 500;
+                  }
+                  a {
+                    display: flex;
+                    align-items: center;
                   }
                 }
               }
@@ -158,21 +138,6 @@
               }
               .endDate {
                 width: 49%;
-              }
-              .datePicker {
-                width: 100%;
-                .MuiFormControl-root {
-                  width: 100% !important;
-                }
-                .MuiInputBase-root {
-                  width: 100% !important;
-                  height: 33px !important;
-                  font-size: $small-font;
-                }
-                .MuiSvgIcon-root {
-                  height: 20px !important;
-                  color: $MainColor;
-                }
               }
             }
           }

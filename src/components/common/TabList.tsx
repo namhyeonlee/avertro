@@ -1,4 +1,5 @@
 import { ReactNode, useState } from "react";
+import "styles/components/tabList.scss";
 
 interface ITab {
   titles: string[];

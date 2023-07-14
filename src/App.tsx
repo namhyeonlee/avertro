@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route } from "react-router-dom";
 import "styles/global.scss";
 import "styles/pageStyle.scss";
