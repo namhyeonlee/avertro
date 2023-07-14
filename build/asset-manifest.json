@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/avertro/static/css/main.5134ef25.css",
-    "main.js": "/avertro/static/js/main.e5b2d405.js",
+    "main.css": "/avertro/static/css/main.c890aa56.css",
+    "main.js": "/avertro/static/js/main.56c5bda0.js",
     "index.html": "/avertro/index.html",
-    "main.5134ef25.css.map": "/avertro/static/css/main.5134ef25.css.map",
-    "main.e5b2d405.js.map": "/avertro/static/js/main.e5b2d405.js.map"
+    "main.c890aa56.css.map": "/avertro/static/css/main.c890aa56.css.map",
+    "main.56c5bda0.js.map": "/avertro/static/js/main.56c5bda0.js.map"
   },
   "entrypoints": [
-    "static/css/main.5134ef25.css",
-    "static/js/main.e5b2d405.js"
+    "static/css/main.c890aa56.css",
+    "static/js/main.56c5bda0.js"
   ]
 }
